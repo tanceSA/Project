@@ -1,0 +1,9 @@
+
+@Override   重寫
+@Deorecated 過時
+@SupperessWarnings 抑制編譯器警報
+
+框架 = 註解 + 反射 + 設計模式
+
+元註解
+@Target 描述註解的使用範圍
