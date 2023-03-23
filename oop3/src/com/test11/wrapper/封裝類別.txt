@@ -1,0 +1,37 @@
+
+1.為什麼要使用封裝類別
+為了使基本資料型態變數具備參考資料型態變數的相關特徵(比如 封裝性、繼承性、多型)
+
+2.(掌握)基本資料型態對應的封裝類別
+byte    ->  Byte
+short   ->  Short
+int     ->  integer
+long    ->  Long
+float   ->  Float
+double  ->  Double
+char    ->  Character
+boolean -> Boolean
+
+3.掌握基本資料型態 與 封裝類別之間的轉換
+    3.1 為什麼需要轉換
+    >一方面在有些場景下，需要使用基本資料型態對應的封裝類的對象，此時就需將基本資料型態的變數
+    轉換為封裝類的對象，例： ArrayList的add(Object obj);Object類別的equals(Object obj)
+    >封裝類別的對象無法進類+-*/等運算
+
+    3.2 如何轉換
+    基本資料型態 -> 封裝類別 ①使用建構式 ②(建議)調用封裝類的vflueOf(xxx xx)方法
+    封裝類別 -> 基本資料型態 調用封裝類別的xxxValue()方法
+
+    注意 使用基本資料型態的屬性改成封裝類別後，預設初始值後變化了
+
+    jdk5.0新特性 自動裝箱、拆箱
+
+4.String與基本資料型態、封裝類別之間的轉換
+
+    基本資料型態、封裝類別 -> String類型
+      ①.調用String的靜態方法valueOf
+      ②.使用連接符號
+
+    String類型 -> 基本資料型態、封裝類別
+        調用包裝類的靜態方法: parseXxx()
+
