@@ -1,0 +1,18 @@
+
+java.lang.Throwable
+    |---java.lang.Error:錯誤, Java虛擬機無法解決的嚴重問題
+                |--- StackOverflowError, OutOfMemoryError
+
+    |---java.lang.Exception:例外,
+                |--- 編譯時異常
+                      |--- ClassnotFoundException
+                      |--- FileNotFoundException
+                      |--- IOException
+                |--- 運行時異常
+                      |--- ArrayIndexOutOfBoundsException
+                      |--- NullPointerException
+                      |--- ClassCastException
+                      |--- NumberFormatException
+                      |--- InputMismatchException
+                      |--- ArithmeticException
+

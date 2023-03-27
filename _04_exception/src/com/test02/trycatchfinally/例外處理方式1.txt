@@ -1,0 +1,46 @@
+
+try-catch-finally
+
+基本結構
+try{
+    ...... //可能產生例外的程式碼
+}
+catch( 例外類型1 e){
+    ...... //發生例外類型1時的處理
+}
+catch( 例外類型1 e){
+    ...... //發生例外類型2時的處理
+}
+finally{
+    ...... //無論是否有產生例外，都會無條件執行的語句
+}
+
+catch中例外處理方式
+① 自己編寫輸出語句
+② printStackTrace(), 印出例外的詳細訊息(推薦)
+③ getMessage, 取得例外發生原因
+
+>運行時異常
+    通常不進行處理，出現時再修改程式碼
+
+>編譯時異常
+    必須進行處理，不然編譯無法通過
+
+finally使用說明
+>將一定會執行的程式碼放在finally結構中
+>無論try或catch中是否有return語句，finally中的程式碼一定會被執行
+
+>finally 可用不可用 但不可單獨使用
+    try-catch (O)
+    try-catch-finally (O)
+    try-finally (X)
+
+開發中，什麼樣的程式一定要寫在finally中
+> 輸入流、輸出流、資料庫連接、Socket連接等資料，使用完後需手動進行關閉，否則會產生內存泄漏
+  為了避免此狀況，必需將這些操作寫在finally中
+
+面試題
+final, finally, finalize 區別
+final 為類別、屬性、方法的修飾語句
+finally為例外處理方式語句
+finalize為Object的方法，已廢棄

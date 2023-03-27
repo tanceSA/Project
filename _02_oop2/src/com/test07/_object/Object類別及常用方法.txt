@@ -1,0 +1,43 @@
+
+1.常用方法
+  重點方法   equals() \ toString()
+
+2.equals()的使用
+
+2.1適用性
+任何參考類型Reference Data Type 都可以使用。
+
+2.2 java.lang.object 類別中 equals()的定義
+    public boolean equals(Object obj) {
+        return (this == obj);
+    }
+
+2.3 子類別使用說定
+>自定義的類別在沒有重寫Object中的equals()方法的情況下，調用的就是Object類別中宣告的equals()
+ 比較兩個對象記憶體的位址是否相同。
+
+>對於像是String、File、Date和封裝類別等、皆重寫了equals()方法，用於比較兩個對象的實際內容是否相等。
+
+2.4 開發中使用說明
+>實際開發中，對於自定義的類別，常常會判斷兩個對象是否euqals(), 主要判斷兩個對象屬性值是否相等
+ 所以需要重寫Object類別的equals()方法
+>如何重寫
+     >手動
+     >IDEA自動生成(推薦)
+
+3. toString()的使用
+
+3.1 toString()的定義
+public String toString() {
+    return getClass().getName() + "@" + Integer.toHexString(hashCode());
+}
+
+3.2 開發中使用的場景
+平時使用System.out.println()列印參考類型變數時，其實就調用了對象的toString()
+
+3.3 子類別使用說明
+> 在沒重寫Object類別的toString()情況下，預設返回對象的記憶體位址
+> String, File, Date 或封裝類等Object的子類別，都已重寫了Object類別的toString()
+
+3.4 開發中使用說明
+>開發中，對於自定義的類別調用toString()時，也希望顯示其內容而非記憶體位址時，就需要重寫toString()
