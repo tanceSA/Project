@@ -1,0 +1,35 @@
+
+案例：遊戲角色
+
+每一個角色都有角色名稱和生命值, 角色生命值不能為負數
+
+要求, 當人物生命值為負數時需拋出自行定義的例外
+
+步驟
+(1)自行定義例外類別NolifeValueException 繼承 RuntimeException
+①提供無參數和有參數的建構子
+②在有參數建構子中需調用父類別的參數構造，代入參數
+
+(2)定義Person類別
+①屬性, 名稱(name)和生命值(lifeValue)
+②提供setter和getter方法
+在setLifeValue(int lifevalue)方法中, 首先判斷, 如果 liftValue為負數，就拋出NoliftValueException
+例外訊息為 生命值對能為負數: xx;
+然後再給成員liftValue賦值
+
+③提供無參建構子
+
+④提供有參數建供子，使用setxxx方法給name和lifeValue賦值
+
+(3)
+定義測試類別Exer3
+①使用帶參數建構子創建Person對象，生命值傳入一個負數
+由於一旦遇到例外，後面的程式碼將不再執行，所以需要注釋掉上面的程式碼
+
+②使用空參建構子創建Person對象
+
+執行SetLfeValue(int lifevalue)方法,傳入一個正數，執行程式
+
+執行SetLfeValue(int lifevalue)方法,傳入一個負數，執行程式
+
+分別對①和②執行 看效果

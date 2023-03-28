@@ -1,0 +1,5 @@
+
+編寫應用程式DivisionDemo.java, 接收命令列的兩個參數, 要求不能輸入負數, 計算兩數相除。
+    對數據類型不一致(NumberFormatException), 缺少命令列參數(ArrayIndexOutOfBoundsException)
+    ,除0(ArithemeticException)及輸入負數(BelowZeroException 自定義例外)進行例外處理
+

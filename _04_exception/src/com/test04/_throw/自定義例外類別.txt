@@ -1,0 +1,12 @@
+
+1.如何自定
+①繼承現有例外類別 如 RuntimeException \ Exception
+②通常會提供幾個重載的建構子
+③提供一個全域變數, 宣告為 static final long serialVersionID;
+
+2.如何使用自定義例外類別
+>在具體的程式碼中, 滿足指定條件的情況下, 需要手動的使用"throw + 自定義例外" 方式，將異常拋出
+>如果自定義異常類是checked Exception，則必需考慮如何處理此例外狀況 (①try-catch-finally ②throws)
+
+3.為什麼需要自定例外類別
+ 通過例外名稱，可以直接判斷出現例外狀況的原因
