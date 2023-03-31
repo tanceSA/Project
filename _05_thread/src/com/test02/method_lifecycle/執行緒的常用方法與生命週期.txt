@@ -1,0 +1,33 @@
+
+一、執行緒的常用結構
+1.Thread中的建構子
+- Public Thread()
+- Public Thread(String name)
+- public Thread(Runnable target)
+- public Thread(Runnable target, String name)
+
+2.Thread中的常用方法
+> start():①啟動執行緒 ②執行run()函式
+> run():執行緒的處理必須鑽寫在run()函數內
+> currentThread():取得目前執行程式碼對應的執行緒
+> getName():取得執行緒的名稱
+> setName():設定執行緒的名稱
+> sleep(long millis):靜態方法, 執行時, 可以使當前執行緒睡眠指定的ms
+> yield():靜態方法, 一旦執行此方法, 就釋放cpu執行權
+> join():在執行緒a中通過執行緒b執行join, 意味著執行緒a進入阻塞狀態
+> isAlive():判斷執行緒是否存活
+
+過時方法
+>stop():不建議使用, 強制結束執行緒
+>suspend()/resume():可能造成死鎖，不建議使用
+
+3.執行緒的優先層級
+getPriority():取得執行緒的優先層級
+setPrority():設定執行緒的優先層級, 範圍[1-10]
+
+Thread類別的三個優先順序常數:
+MAX_PRIORITY（10）：最高優先級
+MIN _PRIORITY （1）：最低優先级
+NORM_PRIORITY （5）：普通優先级，預設情況下main執行緒為普通優先級
+
+二、執行緒的生命週期
