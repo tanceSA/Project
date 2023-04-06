@@ -1,0 +1,46 @@
+
+1.String類別的理解
+1.1 類別的宣告
+public final class String
+    implements java.io.Serializable, Comparable<String>, CharSequence,
+               Constable, ConstantDesc
+> private 外部無法直接獲取字串，且String沒有提供value的 get set 方法
+> 一旦對字串進行修改，就會產生新的物件
+
+1.2 內部宣告的屬性
+private final byte[] value;//儲存字串數據的容器
+   >final : 此valaue陣列一但初始化, 其地址就不可變動
+
+
+2. 字串常數的儲存位置
+>字串常數都存在字串常數列表中(StringTable)中
+>字串常數列表不允許存放兩個相同的字串
+>字串列表在不同jdk版本中，存放位置不同
+ jdk7之前, 字串常數列表存在方法區
+ jdk7之後, 字串常數列表存在堆積(heap)裡
+
+3. String的不可變的特性
+① 當對字串變數重新賦值時, 需要重新指定一個字串位址進行賦值
+② 當對現有自字進行拼接操作時,需重新開辟空間保存拼接的字串
+③ 使用String.replace()替換現有的某個字元時，需重新開辟空間保存拼接的字串
+
+4. String實例化的兩種方式
+第1種 String s1 = "hello";
+第2種 String s2 = new String("hello");
+
+【面試題】
+String s2 = new String("hello");在記憶體建立了幾個物件？
+兩個, 一個是在heap裡new的物件, 另一個是在StringTable中生成的字面量
+
+5. String的連接操作
+情況1:常數 + 常數:
+情況2:常數 + 變數 或 變數 + 變數: 都會通過new的方式創建一個新的字串,返回heap中字串的位址
+情況3:調用intern():返回的是字串常數列表中字串的位址
+
+(了解)情況4:concat(xxx):一律返回一個新new的物件
+
+6. String常用的建構子和方法
+6.1 建構子
+public String()
+public
+
