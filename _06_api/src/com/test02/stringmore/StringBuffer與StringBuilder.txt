@@ -1,0 +1,51 @@
+
+1.三個類別的對比String, StringBuffer, StringBuilder
+>String: 不可變的字串,底層使用hcar[](jdk8之前),底層使用byte[](jdk9及之後)
+>StringBUffer: 可變的字串,JDK1.0, 執行緒安全,底層使用hcar[](jdk8之前),底層使用byte[](jdk9及之後)
+>Steringbuilder: 可變的字串,JDK5.0  執行緒不安全,底層使用hcar[](jdk8之前),底層使用byte[](jdk9及之後)
+
+2.StringBUffer/Steringbuilder的可變性分析
+
+String s1 = new String();   //char[] value = new char[0];
+String s2 = new String("abc");//char[] value = new char[]{'a','b','c'};
+
+對於StringBuilder來說
+內部的屬性有:
+    char[] value; //字元陣列
+    int count;    //實際儲存的字數
+
+StringBuilder sBuilder1 = new StringBuilder();//char[] value = new char[16];
+StringBuilder sBuilder2 = new StringBuilder("abc");//char[] value = new char[16+"abc".length];
+
+sBuilder1.append("a");//value[0] = 'a';
+sBuilder1.append("b");//value[1] = 'b';
+
+...不斷的添加, 一旦count超過value.length時,就需要擴充容量,預設擴充為原有容量的2倍+2
+並將原有value陣列中的元素複製到新的陣列中
+
+3. 原始碼啟示
+>如果開發中需要頻繁的針對字串進行增、刪、改等動作,建議使用StringBuffer或StringBuilder取代String
+ 因為使用String效率低
+>如果開發中不涉及到執行緒安全問題, 建議使用StringBuilder替換StringBuffer,因為使用StringBuilder 效率比較高
+>如果開發中大致上確定要操作的字元的個數,建議使用帶int capacity參數的建植子，可以避免底層多次擴充陣列容量
+
+4.StringBuilder 、 StringBuffer 的 常用方法
+增:
+    append(XX)
+刪:
+    delete(int start, int end)
+    deleteCharAt(int index)
+改:
+    replace(int start, int end, String str)
+    setCharAt(int index, char c)
+查:
+    charAt(int index)
+插:
+    insert(int index)
+長度:
+    length()
+
+5.比對三者的效率
+
+效率從由高到低
+StringBuilder > StringBuffer > String

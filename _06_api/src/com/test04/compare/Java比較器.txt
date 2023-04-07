@@ -1,0 +1,29 @@
+
+1.實現物件的排序,可以考慮兩種方式: 自然排序、定製排序
+
+2.方式一: 實現Comparable介面
+實現步驟
+① 具體類別A需要實現Comparable介面
+② 需要重寫Comparable介面中的compareTo(object o)方法，在方法中指名比較大小的標準
+③ 建立A的多的實例,進行大小的比較排序
+
+3.方式二: 實現Comparator介面
+實現步驟
+① 建立一個實現Comparator介面的實現類別A
+② 實現類別A重寫Comparator介面的抽象方法compare(Object o1, Object o2),
+   在此方法中指明比較大小的標準
+③ 建立實現類別A的物件, 將此物件傳入到相關方法的參數位置即可(例如:Array.sort(...,類A的實例))
+
+4. 對比兩種方式
+角度一
+    自然排序:單一的, 唯一的
+    定制排序:靈活的, 多樣化的
+
+角度二
+    自然排序:一勞永逸的
+    定制排序:臨時的
+
+角度三
+    自然排序:需要對應的介面是Comparable,對應的抽象方法compareTo(Object o)
+    定制排序:需要對應的介面是Comparator,對應的抽象方法compare(Object o1, Object o2)
+

@@ -1,0 +1,38 @@
+
+JDK8之前的API
+1. System.currentTimeMillis()
+    >取得當前時間對應的毫秒數, long類型, 時間戳
+    >現在時間與1970年1月1日0時0分0秒之間的毫秒數
+    >常用來計算時間差
+
+2. 兩個Date類別
+|--java.util.Date
+     *    > 兩個建構子的使用
+     *    > 兩個方法的使用 ① toString() ② getTime()
+     *      |----java.sql.Date //對應資料庫中的Date類型
+
+3. SimpleDateFormat
+   /** java.text.SimpleDateFormat 用於日期時間的格式化和解析
+     *
+     *  格式化: 日期 --> 字串
+     *  解析:   字串 --> 日期
+
+4. Calendar類別(日曆) 抽象類別
+     * Calendar 抽象類別
+     * ①實例化: 由於Calendar是一個抽象類別, 需要建立其子類別的實例, 通過靜態方法getInstance()即可取得
+     *
+     * ②常用方法:get(int field) / set(int field, xx) / add(int field, xx)
+     *          addInt(int field, xx) / getTime() / setTime()
+
+二、JDK8中的API
+1. LocalDate,LocalTime,LocalDateTime 類似於Calendar
+>  實例化:now() / of(xxx,xx,xx)
+>  方法: get() / with(Xxx) / plusXxx) / minusXxx() ...
+
+2. Instant :瞬時 --> 類似於Date
+> 實例化: now() / ofEpochMilli()
+> 方法 toEpochMilli()
+
+3. DataTimeFormatter --> 類似於SimpleDateFormat
+>用於格式化和解析LocalDate,LocalTime,LocalDateTime
+>自定義的格式，如 ofPattern("yyyy/MM/dd HH:mm:ss");
