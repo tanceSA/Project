@@ -1,0 +1,27 @@
+
+1.常用方法
+add(Object obj)
+addAll(Collection coll)
+clear()
+isEmpty()
+size()
+contains(Object obj)
+containsAll(Collection coll)
+retainAll(Collection coll)
+remove(Object obj)
+removeAll(Collection coll)
+hashCode()
+equals()
+toArray()
+*****
+iterator()
+
+2.集合與陣列相互轉換
+集合 ---> 陣列, toArray()
+陣列 ---> 集合, Array.asList(Object ... objs)
+
+3. Collection增加元素的要求
+   要求元素所屬類別一定要重寫equals()
+
+原因:
+因為Collection中的相關方法(例如:contains() / remove())在使用時，會調用該元素的equals()

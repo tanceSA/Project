@@ -1,0 +1,14 @@
+
+1. System類別
+>屬性:out、in、err
+>方法:currenTimeMillis()、exit(int status)、gc()、getProperty(String property)
+
+2. Runtime類別
+>對每个 Java 应用程序都有一个 Runtime 类实例，使应用程序能够与其运行的环境相连接。
+
+3. Math類別
+>與數學運算相關的操作，可以此類中尋找相關的方法使用即可
+
+4. BigInteger類別與BigDecimal類別
+BigInteger: 可表示任何位數的的數字
+BigDecimal: 可表任任何精度的

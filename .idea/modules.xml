@@ -3,13 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Project.iml" filepath="$PROJECT_DIR$/Project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/_00_collection_map/_00_collection_map.iml" filepath="$PROJECT_DIR$/_00_collection_map/_00_collection_map.iml" />
       <module fileurl="file://$PROJECT_DIR$/_01_oop/_01_oop.iml" filepath="$PROJECT_DIR$/_01_oop/_01_oop.iml" />
       <module fileurl="file://$PROJECT_DIR$/_02_oop2/_02_oop2.iml" filepath="$PROJECT_DIR$/_02_oop2/_02_oop2.iml" />
       <module fileurl="file://$PROJECT_DIR$/_03_oop3/_03_oop3.iml" filepath="$PROJECT_DIR$/_03_oop3/_03_oop3.iml" />
       <module fileurl="file://$PROJECT_DIR$/_04_exception/_04_exception.iml" filepath="$PROJECT_DIR$/_04_exception/_04_exception.iml" />
       <module fileurl="file://$PROJECT_DIR$/_05_thread/_05_thread.iml" filepath="$PROJECT_DIR$/_05_thread/_05_thread.iml" />
       <module fileurl="file://$PROJECT_DIR$/_06_api/_06_api.iml" filepath="$PROJECT_DIR$/_06_api/_06_api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_07_collection_map/_07_collection_map.iml" filepath="$PROJECT_DIR$/_07_collection_map/_07_collection_map.iml" />
     </modules>
   </component>
 </project>
