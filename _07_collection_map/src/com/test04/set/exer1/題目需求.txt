@@ -1,0 +1,5 @@
+
+案例:
+定義方法如下:public static List duplicateList(List list)
+要求: ① 參數List中只存放Integer的物件
+     ② 在List內去除重複數字值、儘量簡單

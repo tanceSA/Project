@@ -1,0 +1,69 @@
+
+1. Map及實現類別對比
+java.util.Map   儲存一組一組數據(key-value) -->y-f(x)
+    |---HashMap: 主要實現類別;執行緒不安全,效率高;可以增加null的key和value值;底層使用陣列+單向鏈表+紅黑樹的資料結構儲存(jdk8)
+        |---LinkedHashMap:為HashMap的子類，在HashMap使用的資料結構基礎之上，增加雙向鏈表用於記錄添加資料的順序
+                          遍歷元素時可以按照添加的順序顯示。
+                          開發中需要頻繁遍歷操作時，建議使用此類別。
+    |---TreeMap: 底層使用紅黑樹資料結構儲存;可以按照添加的key元素指定的屬性的大小順序進行遍歷。需要考慮使用①自然排序②定制排序
+    |---Hashtable: 古老實現類別;執行緒安全,效率低;可以增加null的key和value值;底層使用陣列+單向鏈表的資料結構儲存(jdk8)
+        |---Properties: 其key與value皆為String類型。常用來處理屬性文件。
+
+[面試題]
+> 區別HashMap和Hashtable
+> 區別HashMap和LinkedHashMap
+> HashMap的底層實現(①new HashMap() ② put(key,value)
+
+
+2. HashMap中元素的特點
+> HashMap中所有的key是不可重複的、無序的。所有的key就構成一個Set集合 --->key所在的類別就要重寫hashCode()及equals()方法
+> HashMap中的value彼此之間是可重複的、無序的。所有的value構成一個Collection集合--->value所在的類別需要重寫equals()方法
+> HashMap中的一個key-value就構成一個entry
+> HashMap中的所有entry彼此之間是不可重複的、無序的。所有的entry就構成了一個set集合
+
+3. Map中的常用方法
+– 添加、修改操作：
+  – Object put(Object key,Object value) value)：将指定 key value 添加到 或修改 当前map 对象中
+  – void putAll(Map m): 将 m 中的所有 key value 对存放到当前 map 中
+– 删除操作：
+  – Object remove(Object key)Object remove(Object key)：移除指定：移除指定keykey的的keykey--valuevalue对，并返回对，并返回valuevalue
+  – void clear()void clear()：清空当前：清空当前mapmap中的所有数据中的所有数据
+  – 元素查询的操作：元素查询的操作：
+  – Object get(Object key)Object get(Object key)：获取指定：获取指定keykey对应的对应的valuevalue
+  – boolean containsKey(Object key)boolean containsKey(Object key)：是否包含指定的：是否包含指定的keykey
+  – boolean boolean containsValue(Object value)containsValue(Object value)：是否包含指定的：是否包含指定的valuevalue
+  – int size()int size()：返回：返回mapmap中中keykey--valuevalue对的个数对的个数
+  – boolean isEmpty()boolean isEmpty()：判断当前：判断当前mapmap是否为空是否为空
+  – boolean equals(Object obj)boolean equals(Object obj)：判断当前：判断当前mapmap和参数对象和参数对象objobj是否相等是否相等
+– 元视图操作的方法：元视图操作的方法：
+  – Set keySet()Set keySet()：返回所有：返回所有keykey构成的构成的SetSet集合集合
+  – Collection values()Collection values()：返回所有：返回所有valuevalue构成的构成的CollectionCollection集合集合
+  – Set entrySet()Set entrySet()：返回所有：返回所有keykey--valuevalue对构成的对构成的SetSet集合集合
+
+
+小結
+    增:
+        put(Object key,Object value)
+        putAll(Map m)
+    刪:
+        Object remove(Object key)
+    改:
+        put(Object key,Object value)    //修改相同key的value值
+        putAll(Map m)
+    查::
+        Object get(Object key)
+    長度:
+        int size()
+    遍歷:
+        Set keySet()
+        Collection values()
+        Set entrySet()
+
+4. TreeMap的使用
+> 底層使用紅黑樹資料結構儲存
+> 可以依照key元素指定的屬性大小遍歷
+> 需考慮①自然排序②定制排序
+> 要求: 向TreeMap中新增的key必需為同一個類型的。
+
+5. Hashtable 與 Properties的使用
+Properties: 是Hashtable的子類別，其key和value都是String類型

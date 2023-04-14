@@ -1,0 +1,10 @@
+
+練習2：
+
+1、請定義方法public static int listTest(Collection list,String s)統計集合中指定元素出現的次數
+
+2、創建集合，集合存放隨機生成的30個小寫字母
+
+3、用listTest統計，a、b、c、x元素的出現次數
+
+4、效果如下
