@@ -1,0 +1,17 @@
+
+定義一個泛型類別DAO<T>, 在其中定義一個Map成員變數, Map的Key-Value 為 String-T
+
+分別建立以下方法
+public void save(String id, T entity): 保存T類型的物件到Map成員變數中
+public T get (String id):從map中取得id對應的物件
+public void update(String id, T entity): 替換map中 key為id的內容, 改為entity物件
+public List<T> list():返回map中存放的所有T物件
+public void delete(String id):刪除指定id物件
+
+定義一個user類別
+private int id;
+private int age;
+String name;
+
+定義一個測試類別
+建立DAO物件，調用其save、get、update、list、delete方法操作user

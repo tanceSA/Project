@@ -1,0 +1,15 @@
+
+1. 定義一個Employee類別。
+   包含:private屬性成員變數name,age,birthday, 其中birthday為MyDate類別
+   並為每一個屬性定義getter、setter方法
+   並重寫toString方法 輸出 name, age, birthday
+
+2. MyDate類別
+   private成員變數year, month, day;並為每個屬性定義getter、setter方法
+
+3. 建立該類別的5個物件並放入TreeSet集合中(TreeSet需使用泛型來定義)
+
+4. 分別按以下兩種方式對集合中的元素進行排序，並遍歷輸出
+
+   1). 使Employee實現 Comparable介面，並按name排序
+   2). 建立TreeSet時傳入Comparator對象，按生日年月日排序
