@@ -1,0 +1,9 @@
+
+1. SuperA 是 A 的父類別 ， G<SuperA> 與 G<A> 為並列關係，無子父類的關係
+
+比如 ArrayList<Object> 與 ArrayList<String> 沒有任何關係
+
+2. SuperA 是 A 的父類別或介面, SuperA<G> 與 A<G> 的關係: 有繼承或實現的關係
+A<G> 可賦值給 SuperA
+
+比如List<String> 與 ArrayList<String>
